@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+    <title>1-Игровая модель наставничества</title>
+
+</head>
+<body>
+    <div id="divWhole" class="flex">
+        <header>
+            <div class="top flex row">
+                <h1>Игровая модель наставничества</h1>
+                <div class="panel flex row m10" style="align-items: center;">
+                    <div class="dropdown">
+                        <button id="bDropdown">Меню</button>
+                        <div class="dropdown-content flex hidden" id="dropdownContent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="divPositioning" class="flex center">
+            <div id="divScaling"  class="flex center">
+                <div id="divTable">
+                    <table id="cellTable">
+                    </table>
+                </div>
+            </div>
+            <div>
+                <p id="tCellsLeft">0 ячеек осталось</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="divModal" class="ev-transparent hidden flex center">
+        <div id="divModalContent" class="ev-transparent flex">
+            <div id="divModalFrame">
+                <div class="modalContent hidden">
+                    <p id="divModalP1" style="margin-bottom: 1.5em;"></p>
+                    <p id="divModalP2" class="bold"></p>
+                </div>
+                <div class="modalContent hidden">
+                    <h3>Редактировать ячейку</h3>
+                    <div id="fEditCell" class="mb0-5">
+                        <div style="margin-bottom: 0.5em;">
+                            <label for="fQuestion">Вопрос</label>
+                            <textarea id="fQuestion" name="fQuestion" rows="5" 
+                                style="resize: none; flex-grow: 1;"
+                            ></textarea>
+                        </div>
+                        <div style="margin-bottom: 0.5em;">
+                            <label>Сложность</label>
+                            <div class="flex row m4">
+                                <div class="radio-fDifficulty">
+                                    <input type="radio" id="fDifficulty0" name="fDifficulty" value="0">
+                                    <label for="fDifficulty0" data-value="0">
+                                        <div></div>
+                                    </label>
+                                </div>
+                                <div class="radio-fDifficulty">
+                                    <input type="radio" id="fDifficulty1" name="fDifficulty" value="1">
+                                    <label for="fDifficulty1" data-value="1">
+                                        <div></div>
+                                    </label>
+                                </div>
+                                <div class="radio-fDifficulty">
+                                    <input type="radio" id="fDifficulty2" name="fDifficulty" value="2">
+                                    <label for="fDifficulty2"  data-value="2">
+                                        <div></div>
+                                    </label>
+                                </div>
+                                <div class="radio-fDifficulty">
+                                    <input type="radio" id="fDifficulty3" name="fDifficulty" value="3">
+                                    <label for="fDifficulty3" data-value="3">
+                                        <div></div>
+                                    </label>
+                                </div>
+                                <div class="radio-fDifficulty">
+                                    <input type="radio" id="fDifficulty4" name="fDifficulty" value="4">
+                                    <label for="fDifficulty4" data-value="4">
+                                        <div></div>
+                                    </label>
+                                </div>
+                                <div class="radio-fDifficulty">
+                                    <input type="radio" id="fDifficulty5" name="fDifficulty" value="5">
+                                    <label for="fDifficulty5" data-value="5">
+                                        <div></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="fPoints">Баллов</label>
+                            <input type="number" id="fPoints" name="fPoints" style="width: 100px">
+                        </div>
+                    </div>
+                </div>
+                <div class="modalContent hidden">
+                    <h3>Редактировать таблицу</h3>
+                    <div id="fSettings">
+                        <div style="margin-bottom: 1em;">
+                            <div style="margin-bottom: 0.5em;">
+                                <label>Фон для таблицы</label>
+                                <button id="fSelectImage">Выбрать изображение</label>
+                            </div>
+                            
+                            <img id="selectedImage">
+                        </div>
+                        <div style="margin-bottom: 0.5em;">
+                            <label for="fColumns">Размер таблицы</label>
+                            <input type="number" id="fColumns" name="fColumns" min="3" max="10" style="width: 40pt">
+                            <label>x</label>
+                            <input type="number" id="fRows" name="fRows" min="3" max="10" style="width: 40pt">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="fShuffleOnStart" name="fShuffleOnStart" style="width: 12pt; height: 12pt;">
+                            <label for="fShuffleOnStart">Перемешать при запуске игры</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalContent hidden">
+                    <h3 id="t3Top" style="margin-bottom: 1.5em;">Очистить</h3>
+                    <p id="t3Bottom">Вы уверены?</p>
+                </div>
+            </div>
+            <div id="divModalButtons" class="ev-transparent flex center row m10">
+            </div>
+        </div>
+    </div>
+
+    <!-- hidden file inputs -->
+    <input type="file" accept="image/*" id="fLoadImage" class="hidden">
+    <input type="file" accept="text/plain" id="fLoadTable" class="hidden">
+
+    <!-- COMPILED BY TYPESCRIPT -->
+    <script src="app.js"></script>
+</body>
+</html>
